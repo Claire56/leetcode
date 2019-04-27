@@ -14,35 +14,27 @@
 # S will have length in range [1, 500].
 # S will consist of lowercase letters ('a' to 'z') only.
 s = "ababcbacadefegdehijhklij"
-def parts(string):
-    result =[]
-    
-    while string:
-        if string[0]==string[-1]:
-            result.append(len(string))
-            return result
-        
-        
-        n = string.rfind(string[0])
-        temp = string[:n+1]
-        string = string[n+1:]
-        setOfTemp = set(temp)
-        
-        
-        if not any(i in string for i in setOfTemp):
-            result.append(len(temp))
-            
-        else:    
-            N = 0
-            for i in setOfTemp:
-                j = string.rfind(i)
-                if j > N:
-                    N = j
-            toadd=string[:N+1]
-            
-            string = string[N+1:]
-            result.append(len(temp+toadd))
+from collections import Counter
+
+def parts(s):
+	c= Counter(s)
+	result =[]
+	visited =[]
+	lastIndex = 0
+
+	for i, v in enumerate(s):
+		if v not in visited:
+			visited.append(v)
+		c[v]-=1
+
+    	if c[v]==0:
+    		visited.remove(v)
+
+    	if not visited:
+    		result.append(i+1 -last)
+
     return result
+
 print(parts("abbvvhyvxyvva"))
 print(parts("ababcbacadefegdehijhklij"))
 print(parts('because'))
