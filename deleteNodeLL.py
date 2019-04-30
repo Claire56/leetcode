@@ -28,3 +28,19 @@ def deleteNode(x):
 	x.data = x.next.data
 	x.next = x.next.next
 
+# Qn2. remove duplicates from an unsorted ll
+
+def remove(head):
+	curr = head
+	container = set()
+	while curr:
+		if curr.data in container:
+			curr.data = curr.next.data
+			curr.next =curr.next.next
+			curr=curr.next
+
+		else:
+			container.add(curr.data)
+			curr = curr.next
+
+# Qn3. remove duplicates from an unsorted ll
