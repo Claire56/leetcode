@@ -43,4 +43,36 @@ def remove(head):
 			container.add(curr.data)
 			curr = curr.next
 
-# Qn3. remove duplicates from an unsorted ll
+# Qn3. return kth to last
+# will have two pointers moving at diff speeds
+
+def kth(head, k):
+	slow = head
+	for i in range(k):
+		fast = slow.next
+
+	while fast:
+		fast = fast.next
+		slow = slow.next
+
+
+	return slow
+
+
+
+# Qn3. reverse a ll
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
