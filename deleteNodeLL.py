@@ -125,9 +125,38 @@ def cycle_check(node):
     # Case where marker ahead reaches the end of the list
     return False
 	
+# impliment a singly ll
+class LinkedListNode(object):
+    
+    def __init__(self,value):
+        
+        self.value = value
+        self.nextnode = None
 	
+	
+a = LinkedListNode(1)
+b = LinkedListNode(2)
+c = LinkedListNode(3)
+a.nextnode = b
+b.nextnode = c
+# impliment a singly ll
+class DoublyLinkedListNode(object):
+    
+    def __init__(self,value):
+        
+        self.value = value
+        self.next_node = None
+        self.prev_node = None
 
-
+a = DoublyLinkedListNode(1)
+b = DoublyLinkedListNode(2)
+c = DoublyLinkedListNode(3)
+# Setting b after a
+b.prev_node = a
+a.next_node = b
+# Setting c after a
+b.next_node = c
+c.prev_node = b
 
 
 
